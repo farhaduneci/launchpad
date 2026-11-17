@@ -12,7 +12,7 @@ plugins {
 }
 
 android {
-    namespace = "fumi.day.literallauncher"
+    namespace = "com.farhaduneci.launchpad"
 
     dependenciesInfo {
         includeInApk = false
@@ -35,7 +35,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "fumi.day.literallauncher"
+        applicationId = "com.farhaduneci.launchpad"
         minSdk = 28
         targetSdk = 36
         versionCode = 21

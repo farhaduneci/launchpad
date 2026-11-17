@@ -1,4 +1,4 @@
-# Literal Launcher - User Guide
+# Launchpad - User Guide
 
 ## Home Screen
 
@@ -92,4 +92,4 @@ Assign apps to all slots from a single screen — an alternative to long-pressin
 
 ---
 
-*All text in the UI is displayed in lowercase.*
+*UI chrome (labels, buttons) is displayed in lowercase. App names are displayed in Title Case.*

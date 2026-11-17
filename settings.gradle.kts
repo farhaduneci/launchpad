@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Literal Launcher"
+rootProject.name = "Launchpad"
 include(":app")

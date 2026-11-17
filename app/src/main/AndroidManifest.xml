@@ -9,12 +9,13 @@
     </queries>
 
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.LiteralLauncher">
+        android:theme="@style/Theme.Launchpad">
 
         <activity
             android:name=".MainActivity"
@@ -22,13 +23,36 @@
             android:launchMode="singleInstance"
             android:clearTaskOnLaunch="true"
             android:stateNotNeeded="true"
-            android:windowDisablePreview="true"  android:windowAnimationStyle="@null" android:windowNoDisplay="false">     <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
+            android:windowDisablePreview="true"
+            android:windowAnimationStyle="@null">
 
-            <category android:name="android.intent.category.HOME" />
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
+            <!-- Home screen registration -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- Regular app entry — enables appearance in battery optimization and app picker lists -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
+
+        <!-- Device admin receiver — required for lock-screen slot action -->
+        <receiver
+            android:name=".admin.LaunchpadAdminReceiver"
+            android:exported="true"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin" />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+
     </application>
 </manifest>

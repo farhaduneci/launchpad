@@ -1,22 +1,29 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-/.idea/deploymentTargetSelector.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+### Android ###
+.gradle/
+build/
 local.properties
+*.log
+captures/
+.externalNativeBuild/
+.cxx/
 *.apk
-docs/PLAY_STORE.md
-docs/PLAY_STORE_SUBMISSION.md
-docs/play_store_assets/
+*.aab
+output.json
+*.jks
+*.keystore
+google-services.json
+*.hprof
 
-CLAUDE.md
+### IntelliJ / Android Studio ###
+*.iml
+.idea/
+
+### Kotlin ###
+*.class
+*.ctxt
+.mtj.tmp/
+hs_err_pid*
+replay_pid*
+
+### VSCode ###
+.vscode/
